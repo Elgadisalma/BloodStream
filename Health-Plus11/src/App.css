@@ -22,3 +22,11 @@ html {
     background-color: #1A8EFD;
     border-radius: 4rem;
 }
+.App {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background-color: #ecf0f1;
+}

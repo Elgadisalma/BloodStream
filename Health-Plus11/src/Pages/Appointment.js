@@ -5,4 +5,4 @@ function Appointment() {
   return <AppointmentForm />;
 }
 
-export default Appointment;
+export default Appointment; 
