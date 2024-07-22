@@ -2,39 +2,40 @@ import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import "../Styles/AppointmentForm.css";
 import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+import logo from "../Assets/logo.jpg";  // Import the logo image
 
 function AppointmentForm() {
   useEffect(() => {
     window.scrollTo({ top: 0, behavior: "smooth" });
-  });
+  }, []);
 
-  const [patientName, setPatientName] = useState("");
-  const [patientNumber, setPatientNumber] = useState("");
-  const [patientGender, setPatientGender] = useState("default");
+  const [donorName, setDonorName] = useState("");
+  const [donorNumber, setDonorNumber] = useState("");
+  const [donorGender, setDonorGender] = useState("default");
   const [appointmentTime, setAppointmentTime] = useState("");
-  const [preferredMode, setPreferredMode] = useState("default");
+  const [dateOfBirth, setDateOfBirth] = useState("");
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [formErrors, setFormErrors] = useState({});
 
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    // Validate form inputs
     const errors = {};
-    if (!patientName.trim()) {
-      errors.patientName = "Patient name is required";
-    } else if (patientName.trim().length < 8) {
-      errors.patientName = "Patient name must be at least 8 characters";
+    if (!donorName.trim()) {
+      errors.donorName = "Donor name is required";
+    } else if (donorName.trim().length < 8) {
+      errors.donorName = "Donor name must be at least 8 characters";
     }
 
-    if (!patientNumber.trim()) {
-      errors.patientNumber = "Patient phone number is required";
-    } else if (patientNumber.trim().length !== 10) {
-      errors.patientNumber = "Patient phone number must be of 10 digits";
+    if (!donorNumber.trim()) {
+      errors.donorNumber = "Donor phone number is required";
+    } else if (donorNumber.trim().length !== 10) {
+      errors.donorNumber = "Donor phone number must be of 10 digits";
     }
 
-    if (patientGender === "default") {
-      errors.patientGender = "Please select patient gender";
+    if (donorGender === "default") {
+      errors.donorGender = "Please select donor gender";
     }
     if (!appointmentTime) {
       errors.appointmentTime = "Appointment time is required";
@@ -45,8 +46,8 @@ function AppointmentForm() {
         errors.appointmentTime = "Please select a future appointment time";
       }
     }
-    if (preferredMode === "default") {
-      errors.preferredMode = "Please select preferred mode";
+    if (!dateOfBirth) {
+      errors.dateOfBirth = "Date of birth is required";
     }
 
     if (Object.keys(errors).length > 0) {
@@ -54,12 +55,11 @@ function AppointmentForm() {
       return;
     }
 
-    // Reset form fields and errors after successful submission
-    setPatientName("");
-    setPatientNumber("");
-    setPatientGender("default");
+    setDonorName("");
+    setDonorNumber("");
+    setDonorGender("default");
     setAppointmentTime("");
-    setPreferredMode("default");
+    setDateOfBirth("");
     setFormErrors({});
 
     toast.success("Appointment Scheduled !", {
@@ -73,93 +73,97 @@ function AppointmentForm() {
     <div className="appointment-form-section">
       <h1 className="legal-siteTitle">
         <Link to="/">
-          Health <span className="legal-siteSign">+</span>
+          Bloodstream <span className="legal-siteSign">+</span>
         </Link>
       </h1>
 
       <div className="form-container">
-        <h2 className="form-title">
-          <span>Book Appointment Online</span>
-        </h2>
+        <div className="form-left">
+          <h2 className="form-title">
+            <span>Book Appointment Online</span>
+          </h2>
+          <form className="form-content" onSubmit={handleSubmit}>
+            <label>
+              Donor Full Name:
+              <input
+                type="text"
+                value={donorName}
+                onChange={(e) => setDonorName(e.target.value)}
+                required
+              />
+              {formErrors.donorName && <p className="error-message">{formErrors.donorName}</p>}
+            </label>
 
-        <form className="form-content" onSubmit={handleSubmit}>
-          <label>
-            Patient Full Name:
-            <input
-              type="text"
-              value={patientName}
-              onChange={(e) => setPatientName(e.target.value)}
-              required
-            />
-            {formErrors.patientName && <p className="error-message">{formErrors.patientName}</p>}
-          </label>
+            <br />
+            <label>
+              Donor Phone Number:
+              <input
+                type="text"
+                value={donorNumber}
+                onChange={(e) => setDonorNumber(e.target.value)}
+                required
+              />
+              {formErrors.donorNumber && <p className="error-message">{formErrors.donorNumber}</p>}
+            </label>
 
-          <br />
-          <label>
-            Patient Phone Number:
-            <input
-              type="text"
-              value={patientNumber}
-              onChange={(e) => setPatientNumber(e.target.value)}
-              required
-            />
-            {formErrors.patientNumber && <p className="error-message">{formErrors.patientNumber}</p>}
-          </label>
+            <br />
+            <label>
+              Donor Gender:
+              <select
+                value={donorGender}
+                onChange={(e) => setDonorGender(e.target.value)}
+                required
+              >
+                <option value="default">Select</option>
+                <option value="male">Male</option>
+                <option value="female">Female</option>
+                <option value="private">I will inform Doctor only</option>
+              </select>
+              {formErrors.donorGender && <p className="error-message">{formErrors.donorGender}</p>}
+            </label>
 
-          <br />
-          <label>
-            Patient Gender:
-            <select
-              value={patientGender}
-              onChange={(e) => setPatientGender(e.target.value)}
-              required
-            >
-              <option value="default">Select</option>
-              <option value="male">Male</option>
-              <option value="female">Female</option>
-              <option value="private">I will inform Doctor only</option>
-            </select>
-            {formErrors.patientGender && <p className="error-message">{formErrors.patientGender}</p>}
-          </label>
+            <br />
+            <label>
+              Fix an Appointment:
+              <input
+                type="datetime-local"
+                value={appointmentTime}
+                onChange={(e) => setAppointmentTime(e.target.value)}
+                required
+                min={new Date().toISOString().slice(0, 16)} // Définit la date/heure minimale à maintenant
+              />
+              {formErrors.appointmentTime && <p className="error-message">{formErrors.appointmentTime}</p>}
+            </label>
 
-          <br />
-          <label>
-            Preferred Appointment Time:
-            <input
-              type="datetime-local"
-              value={appointmentTime}
-              onChange={(e) => setAppointmentTime(e.target.value)}
-              required
-            />
-            {formErrors.appointmentTime && <p className="error-message">{formErrors.appointmentTime}</p>}
-          </label>
+            <br />
+            <label>
+              Date of Birth:
+              <input
+                type="date"
+                value={dateOfBirth}
+                onChange={(e) => setDateOfBirth(e.target.value)}
+                required
+              />
+              {formErrors.dateOfBirth && <p className="error-message">{formErrors.dateOfBirth}</p>}
+            </label>
 
-          <br />
-          <label>
-            Preferred Mode:
-            <select
-              value={preferredMode}
-              onChange={(e) => setPreferredMode(e.target.value)}
-              required
-            >
-              <option value="default">Select</option>
-              <option value="voice">Voice Call</option>
-              <option value="video">Video Call</option>
-            </select>
-            {formErrors.preferredMode && <p className="error-message">{formErrors.preferredMode}</p>}
-          </label>
+            <br />
+            <button type="submit" className="text-appointment-btn">
+              Confirm Appointment
+            </button>
 
-          <br />
-          <button type="submit" className="text-appointment-btn">
-            Confirm Appointment
-          </button>
-
-          <p className="success-message" style={{display: isSubmitted ? "block" : "none"}}>Appointment details has been sent to the patients phone number via SMS.</p>
-        </form>
+            <p className="success-message" style={{ display: isSubmitted ? "block" : "none" }}>
+              Appointment details have been sent to the donor's phone number via SMS.
+            </p>
+          </form>
+        </div>
+        <div className="form-right">
+          <img src={logo} alt="Logo" className="logo-image"/>
+        </div>
       </div>
 
       <div className="legal-footer">
-        <p>© 2013-2023 Health+. All rights reserved.</p>
+        <p>© 2013-2023 Bloodstream. All rights reserved.</p>
       </div>
 
       <ToastContainer autoClose={5000} limit={1} closeButton={false} />
@@ -168,3 +172,18 @@ function AppointmentForm() {
 }
 
 export default AppointmentForm;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
