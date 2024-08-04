@@ -14,7 +14,7 @@ export const navItems = [
     {
       id: 3,
       title: "Rendez-vous",
-      path: "/appointment",
+      path: "/Appointement",
       cName: "nav-item",
     },
     {
