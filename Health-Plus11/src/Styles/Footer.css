@@ -1,7 +1,7 @@
 .footer-section {
     background:linear-gradient(rgba(45, 1, 1, 0.6), transparent);
-    width: auto;
-    padding: auto;
+    width: 100%;
+    padding: 25px;
 }
 .footer-container {
     padding: 100px;
@@ -11,7 +11,7 @@
     align-items: flex-start;
     gap: 50px;
     color: rgb(255, 255, 255);
-    border-bottom: 90px solid #ffffff;
+    border-bottom: 90px solid #cac1c1;
     border-radius: 50px;
 }
 
@@ -107,7 +107,7 @@
 }
 /* CopyRight */
 .ft-copyright {
-    padding: 24px 40px;
+    padding: 50px 40px;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -116,6 +116,7 @@
     font-size: 18px;
     font-weight: bold;
     letter-spacing: .8px;
+    margin: 0px;
 }
 .ft-social-links {
     list-style-type: none;
