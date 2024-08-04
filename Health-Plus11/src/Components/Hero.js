@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import Doctor from "../Assets/doctor-picture.png";
+import Doctor from "../Assets/p22.jpg";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCalendarCheck, faAngleUp } from "@fortawesome/free-solid-svg-icons";
 import { useNavigate  } from "react-router-dom";
@@ -19,7 +19,7 @@ function Hero() {
 
   useEffect(() => {
     const onPageScroll = () => {
-      if (window.scrollY > 600) {
+      if (window.scrollY > 600) {/*verifie la pos du defilement*/
         setGoUp(true);
       } else {
         setGoUp(false);
@@ -36,16 +36,13 @@ function Hero() {
     <div className="section-container">
       <div className="hero-section">
         <div className="text-section">
-          <p className="text-headline">❤️ Health comes first</p>
+          {/* <p className="text-headline">Donner du sang sauvez des vies</p> */}
           <h2 className="text-title">
-            Find your Doctor and make an Appointments
+            Bienvenue sur<font>BloodStream</font> 
           </h2>
           <p className="text-descritpion">
-            Talk to online doctors and get medical advice, online prescriptions,
-            refills and medical notes within minutes. On-demand healthcare
-            services at your fingertips.
-          </p>
-          <button
+             Trouvez facilement un centre de don près de chez vous et planifiez vos rendez-vous en un clin d'œil. Avec des rappels pratiques et des infos claires, chaque don joue un rôle crucial pour sauver des vies. Votre soutien renforce notre mission et apporte de l'espoir. Merci de faire la différence !</p>
+             <button
             className="text-appointment-btn"
             type="button"
             onClick={handleBookAppointmentClick}

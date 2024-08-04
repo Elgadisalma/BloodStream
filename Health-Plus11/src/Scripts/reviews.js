@@ -1,52 +1,47 @@
 export const customerReviews = [
     {
-      "name": "Esther Howard",
-      "location": "Texas, USA",
-      "message": "Health Plus transformed my healthcare experience! The online consultations were so convenient, and the doctors were knowledgeable and caring."
+      "name": "Rachid bennani",
+      "location": "Marrakech, MAROC",
+      "message": "Donner du sang m'a permis de me sentir connecté à ma communauté. C'est un petit geste qui fait une grande différence."
     },
     {
-      "name": "John Doe",
-      "location": "California, USA",
-      "message": "I found the perfect specialist for my condition through Health Plus. The personalized treatment plan made all the difference. Thank you for prioritizing my health!"
+      "name": "Salma fathi",
+      "location": "Casablanca, MAROC",
+      "message": "Donner du sang a été une expérience incroyable pour moi. Savoir que j'ai aidé à sauver une vie est une sensation indescriptible."
     },
     {
-      "name": "Alice Smith",
-      "location": "New York, USA",
-      "message": "Booking appointments was a breeze, and the service exceeded my expectations. The doctors truly listen and provide effective solutions. 5 stars!"
+      "name": "Clemence rahma audeart",
+      "location": "Casablanca, MAROC",
+      "message": "Chaque don compte. Je donne régulièrement depuis des années et chaque fois, je me sens fier de contribuer à une cause si importante."
     },
     {
-      "name": "Bob Johnson",
-      "location": "Florida, USA",
-      "message": "Health Plus is a game-changer! The emergency care saved me during a critical situation. Grateful for their quick and efficient support."
+      "name": "mohammed el karmi",
+      "location": "Rabat, MAROC",
+      "message": "Après une transfusion d'urgence qui m'a sauvé la vie, j'ai décidé de devenir donneur. C'est ma façon de redonner à la communauté."
     },
     {
-      "name": "Jane Brown",
-      "location": "Washington, USA",
-      "message": "I used to dread dental visits, but Health Plus made it a pleasant experience. The dentist was gentle and professional. I'll definitely be back!"
+      "name": "jihane el bastami",
+      "location": "Rabat, MAROC",
+      "message": "Le don de sang est un acte simple mais puissant. C'est gratifiant de savoir que mon sang peut aider quelqu'un à guérir."
     },
     {
-      "name": "Robert Wilson",
-      "location": "Texas, USA",
-      "message": "Finally, a healthcare platform that puts patients first! The heart disease service provided comprehensive care and regular follow-ups. Thank you, Health Plus!"
+      "name": "ayoub el madani",
+      "location": "Marrakech, MAROC",
+      "message": "J'ai commencé à donner du sang après qu'un ami ait eu besoin d'une transfusion. Maintenant, je donne régulièrement pour aider les autres."
     },
-    {
-      "name": "Mary Lee",
-      "location": "California, USA",
-      "message": "I've been using Health Plus for a variety of health concerns, and each time, I received exceptional care. It's my go-to for all medical needs!"
-    },
-    {
-      "name": "David Miller",
-      "location": "Texas, USA",
-      "message": "I highly recommend Health Plus for online consultations. It's convenient, secure, and the doctors are top-notch. Great job, team!"
-    },
-    {
-      "name": "Sarah Johnson",
-      "location": "Florida, USA",
-      "message": "The convenience of accessing medical notes online was fantastic. Health Plus made managing my health records hassle-free! Best Healthcare services."
-    },
-    {
-      "name": "Michael Brown",
-      "location": "New York, USA",
-      "message": "As a busy professional, Health Plus has been a lifesaver. Quick prescriptions and refills without compromising on quality care. Thank you!"
-    }
+    // {
+    //   "name": "Mary Lee",
+    //   "location": "California, USA",
+    //   "message": "I've been using Health Plus for a variety of health concerns, and each time, I received exceptional care. It's my go-to for all medical needs!"
+    // },
+    // {
+    //   "name": "David Miller",
+    //   "location": "Texas, USA",
+    //   "message": "I highly recommend Health Plus for online consultations. It's convenient, secure, and the doctors are top-notch. Great job, team!"
+    // },
+    // {
+    //   "name": "Sarah Johnson",
+    //   "location": "Florida, USA",
+    //   "message": "The convenience of accessing medical notes online was fantastic. Health Plus made managing my health records hassle-free! Best Healthcare services."
+    // },
 ];

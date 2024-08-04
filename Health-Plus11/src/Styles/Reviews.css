@@ -4,9 +4,9 @@
     justify-content: center;
     align-items: center;
     gap: 24px;
-    background: linear-gradient(to right, #ECF2FF, #FBFCFF);
+    background: transparent;
 }
-/* Text */
+
 .rw-text-content {
     width: 100%;
 }
@@ -19,19 +19,19 @@
     letter-spacing: .7px;
 }
 .rw-text-num {
-    color: #178BFF;
+    color: #520d0d;
 }
 .rw-text-desc {
     margin: 16px 0;
-    color: black;
+    color: rgb(75, 13, 13);
     font-family: 'Rubik', sans-serif;
-    font-size: 36px;
+    font-size: 33px;
     font-weight: bold;
     letter-spacing: .7px;
     line-height: 2.6rem;
 }
 .rw-text-format {
-    margin: 64px 0;
+    margin: 70px 0;
     display: flex;
     justify-content: flex-start;
     align-items: center;
@@ -41,7 +41,7 @@
     position: absolute;
     top: -18px;
     left: -24px;
-    color: #178BFF;
+    color: #bb0a0a;
     font-family: 'Poppins', sans-serif;
     font-size: 40px;
     font-weight: bold;
@@ -51,7 +51,7 @@
     position: absolute;
     right: -18px;
     bottom: -24px;
-    color: #178BFF;
+    color: #b61515;
     font-family: 'Poppins', sans-serif;
     font-size: 40px;
     font-weight: bold;
@@ -60,7 +60,7 @@
 .rw-review {
     display: block;
     margin: 0 0 0 8px;
-    color: black;
+    color: rgb(115, 13, 13);
     font-family: 'Rubik', sans-serif;
     font-size: 24px;
     letter-spacing: .7px;
@@ -81,7 +81,7 @@
 }
 .rw-reviewer-place {
     margin: 6px 0 0 0;
-    color: #6F7074;
+    color: #6f7074;
     font-family: 'Rubik', sans-serif;
     font-size: 18px;
     font-weight: bold;
@@ -90,7 +90,7 @@
 /* Buttons */
 .rw-next-btn {
     margin: 0 24px 0 0;
-    color: black;
+    color: rgb(57, 9, 9);
     border: 1px solid transparent;
     background-color: transparent;
     outline: transparent;
@@ -98,9 +98,9 @@
     cursor: pointer;
 }
 .rw-next-btn:hover {
-    color: #178BFF;
+    color: #d2737b;
 }
-/* Responsive */
+
 @media screen and (max-width: 700px) {
     .review-section {
         letter-spacing: .8px;

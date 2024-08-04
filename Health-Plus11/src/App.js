@@ -4,10 +4,13 @@ import "./App.css";
 import Home from "./Pages/Home";
 import Legal from "./Pages/Legal";
 import NotFound from "./Pages/NotFound";
-import Appointment from "./Pages/Appointment";
+// import Appointment from "./Pages/AppointmentForm";
 import Authuser from "./Pages/Authuser";
 import Signup from "./Pages/Signup";
 import Oudonner from "./Pages/Oudonner";
+import Contactus from "./Pages/Contactus";
+import Quest from "./Pages/Quest";
+import Quisommes from "./Pages/Quisommes"
 
 function App() {
   return (
@@ -16,12 +19,15 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/legal" element={<Legal />} />
-          <Route path="/appointment" element={<Appointment />} />
+          {/* <Route path="/appointment" element={<Appointment />} /> */}
           <Route path="*" element={<NotFound />} />
           <Route path="/login" element={<Authuser/>} />
           <Route path="/signup" element={<Signup/>}/>
-          <Route path="/search" element={<Oudonner/>}/>
-        </Routes>
+          <Route path="/Oudonner" element={<Oudonner/>}/>
+          <Route path="/contactus" element={<Contactus/>}/>
+          <Route path="/Quest" element={<Quest/>}/>
+          <Route path="/Quisommes" element={<Quisommes/>}/>
+         </Routes>
       </Router>
     </div>
   );

@@ -3,49 +3,37 @@ import InformationCard from "./InformationCard";
 import { faHeartPulse, faTruckMedical, faTooth } from "@fortawesome/free-solid-svg-icons";
 import "../Styles/Info.css";
 
+
 function Info() {
+ 
+
   return (
     <div className="info-section" id="services">
       <div className="info-title-content">
-        <h3 className="info-title">
-          <span>What We Do</span>
-        </h3>
+        {/* <h3 className="info-title">
+          <span>La Valeur du Don de Sang</span>
+        </h3> */}
+        <h2 className="p2" >"Le don de sang est un acte d'amour qui ne coûte rien mais qui donne tout."</h2>
         <p className="info-description">
-          We bring healthcare to your convenience, offering a comprehensive
-          range of on-demand medical services tailored to your needs. Our
-          platform allows you to connect with experienced online doctors who
-          provide expert medical advice, issue online prescriptions, and offer
-          quick refills whenever you require them.
+        "*******Albert Schweitzer, médecin et prix Nobel de la paix*******
         </p>
-      </div>
-
-      <div className="info-cards-content">
-        <InformationCard
-          title="Emergency Care"
-          description="Our Emergency Care service is designed to be your reliable support
-            in critical situations. Whether it's a sudden illness, injury, or
-            any medical concern that requires immediate attention, our team of
-            dedicated healthcare professionals is available 24/7 to provide
-            prompt and efficient care."
+       </div>
+       <div className="info-cards-content">
+        <InformationCard 
+          title=" Sauver des Vies"
+          // description="Le don de sang est vital pour les patients en urgence, comme ceux victimes d'acidents ou de chirurgies majeures. Un seul don peut aider jusqu'à trois personnes en fournissant les composants nécessaires comme les globules rouges, les plaquettes et le plasma."
           icon={faTruckMedical}
         />
 
-        <InformationCard
-          title="Heart Disease"
-          description="Our team of experienced cardiologists and medical experts use
-            state-of-the-art technology to assess your cardiovascular health and
-            design personalized treatment plans. From comprehensive screenings
-            to advanced interventions, we are committed to helping you maintain
-            a healthy heart and lead a fulfilling life."
+        <InformationCard 
+          title="Soutien aux Malades Chroniques"
+          // description="Les patients atteints de maladies chroniques comme la leucémie ont besoin de transfusions régulières pour leur qualité de vie. Votre don les aide à continuer leur traitement et à vivre plus longtemps."
           icon={faHeartPulse}
         />
 
-        <InformationCard
-          title="Dental Care"
-          description="Smile with confidence as our Dental Care services cater to all your
-            oral health needs. Our skilled dentists provide a wide range of
-            treatments, from routine check-ups and cleanings to cosmetic
-            procedures and restorative treatments."
+        <InformationCard 
+          title=" Réponse aux Situations d'Urgence"
+          // description="En cas de catastrophes naturelles ou de crises sanitaires, les besoins en sang augmentent rapidement. Les dons réguliers garantissent que les réserves de sang sont suffisantes pour répondre efficacement aux situations d'urgence et sauver des vies."
           icon={faTooth}
         />
       </div>
