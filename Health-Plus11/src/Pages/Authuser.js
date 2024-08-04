@@ -48,13 +48,14 @@ import "./Authuser.css";
 import { Link} from 'react-router-dom';
 import React, { useState } from "react";
 import axios from "axios";
-import { Navigate } from 'react-router-dom'; // Import Navigate instead of Redirect
+import { Navigate } from 'react-router-dom'; 
+
 
 export default function LoginView() {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [errorMessage, setErrorMessage] = useState("");
-  const [redirect, setRedirect] = useState(false); // Add state for redirect
+  const [redirect, setRedirect] = useState(false);
 
   const handleLogin = async (e) => {
     e.preventDefault();
@@ -75,22 +76,22 @@ export default function LoginView() {
     }
   };
 
-  // Render redirect if redirect state is true
   if (redirect) {
     return <Navigate to='/' replace />;
   }
     return (
-        <div className="body">
-            <Navbar />
+      <div>
+        <Navbar/>
+       <div className="body">
+        
             <div className="create-account-container">
                 <h1>Vous n'avez pas encore de compte ?</h1>
                 <p>Créez votre compte en quelques minutes à l'aide du mail utilisé lors de votre inscription à l'EFS</p>
                 <Link to="/signup" className="create-account-btn">
                     JE CRÉE UN COMPTE
                 </Link>
-            </div>
-        
-            <div className="login-container">
+                </div>
+               <div className="login-container">
                 <h2>J'ai déjà un compte</h2>
                 <p>Renseignez votre Gmail</p>
                 <form onSubmit={handleLogin}>
@@ -123,10 +124,9 @@ export default function LoginView() {
                 </form>
             </div>
             
-            <Footer />
+        </div>
+        <Footer/>
         </div>
     );
 };
-
-// export default Authuser; 
 

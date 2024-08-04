@@ -1,0 +1,116 @@
+.upcoming-events {
+    padding: 4rem 2rem;
+    background:transparent;
+    text-align: center;
+    font-family: 'Georgia', sans-serif;
+  }
+
+  .upcoming-events h2 {
+    font-size: 2.5rem;
+    margin-bottom: 3rem;
+    color: #530c0c;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    position: relative;
+    animation: fadeInDown 1s ease-in-out;
+  }
+
+  .events-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5rem;
+    justify-content: center;
+  }
+  
+  /* Individual event card */
+  .event-card {
+    background: #ffffff;
+    border: none;
+    border-radius: 15px;
+    padding: 1.5rem;
+    width: 300px;
+    box-shadow: 0 10px 20px rgba(135, 69, 69, 0.285);
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+    animation: fadeInUp 0.8s ease-in-out;
+  }
+  
+  /* Card hover effect */
+  .event-card:hover {
+    transform: translateY(-15px);
+    box-shadow: 0 15px 30px rgb(148, 105, 105);
+    background: linear-gradient( #ffffff, #8b56564c);
+  }
+  
+  .event-card::before, .event-card::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 300%;
+    height: 300%;
+    background: rgba(183, 127, 127, 0.132);
+    transition: all 0.5s ease;
+    transform: translate(-50%, -50%) scale(0);
+    border-radius: 50%;
+  }
+  
+  .event-card:hover::before {
+    transform: translate(-50%, -50%) scale(1);
+  }
+  
+  .event-card:hover::after {
+    transform: translate(-50%, -50%) scale(1.5);
+  }
+  
+  /* Event title */
+  .event-card h3 {
+    font-size: 1.75rem;
+    margin-bottom: 1rem;
+    color: #c30b0bb2;
+    text-transform: uppercase;
+    position: relative;
+    z-index: 1;
+  }
+  
+  /* Event description */
+  .event-card p {
+    font-size: 1.1rem;
+    color: #1a0303;
+    line-height: 1.6;
+    position: relative;
+    z-index: 1;
+  }
+  
+  /* Keyframes for animations */
+  @keyframes fadeInDown {
+    from {
+      opacity: 0;
+      transform: translateY(-20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  /* Responsive design for smaller screens */
+  @media (max-width: 768px) {
+    .event-card {
+      width: 100%;
+    }
+  }
+  

@@ -10,35 +10,25 @@ function Footer() {
         <div className="ft-info">
           <div className="ft-info-p1">
             <p className="ft-title">
-              Health <span className="ft-sign">+</span>
-            </p>
-            <p className="ft-description">
-              Talk to online doctors and get medical advice, online
-              prescriptions, refills and medical notes within minutes. On-demand
-              healthcare services at your fingertips.
+              BloodStream
             </p>
           </div>
-
           <SubscribeNewsletter />
         </div>
-
         <div className="ft-list">
           <p className="ft-list-title">Services</p>
           <ul className="ft-list-items">
             <li>
-              <a href="#services">Emergency Care</a>
+              <a href="#services">Qui peut donner</a>
             </li>
             <li>
-              <a href="#services">Heart Disease</a>
+              <a href="#services">Ou donner</a>
             </li>
             <li>
-              <a href="#services">Dental Care</a>
+              <a href="#services">Qui sommes-nous</a>
             </li>
             <li>
-              <a href="#services">Prescription</a>
-            </li>
-            <li>
-              <a href="#services">Insights for doctors</a>
+              <a href="#services">Rendez-vous</a>
             </li>
           </ul>
         </div>
@@ -65,15 +55,10 @@ function Footer() {
         </div>
 
         <div className="ft-list" id="contact">
-          <p className="ft-list-title">Talk To Us</p>
+          <p className="ft-list-title">Contact Us</p>
           <ul className="ft-list-items">
             <li>
-              <a href="mailto:support@healthplus.com">support@healthplus.com</a>
-            </li>
-            <li>
-              <a href="mailto:appointment@healthplus.com">
-                appointment@healthplus.com
-              </a>
+              <a href="mailto:support@healthplus.com">BloodStream@gmail.com</a>
             </li>
             <li>
               <a href="tel:+022 5454 5252">+022 5454 5252</a>
@@ -86,7 +71,7 @@ function Footer() {
       </div>
 
       <div className="ft-copyright">
-        <p>© 2013-2023 Health+. All rights reserved.</p>
+        <p>© 2013-2024 Health+. All rights reserved.</p>
 
         <ul className="ft-social-links">
           <li>

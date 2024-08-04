@@ -1,109 +1,44 @@
 import React, { useState } from "react";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {
-  faBars,
-  faXmark,
-} from "@fortawesome/free-solid-svg-icons";
-import "../Styles/Navbar.css";
 import { Link } from "react-router-dom";
+import "../Styles/Navbar.css";
+import { navItems } from "./NavItems";
+import Button from "./Button";
+import Dropdown from "./Dropdown";
 
 function Navbar() {
-  const [nav, setNav] = useState(false);
-
-  const openNav = () => {
-    setNav(!nav);
-  };
+  const [dropdown, setDropdown] = useState(false);
 
   return (
-    <div className="navbar-section">
-      <h1 className="navbar-title">
-        <Link to="/">
-          BloodStream<span className="navbar-sign">+</span>
+    <>
+      <nav className="navbar">
+        <Link to="/" className="navbar-logo">
+         BloodStream 
         </Link>
-      </h1>
-      <ul className="navbar-items">
-        <li>
-          <Link to="/" className="navbar-links">
-            Home
-          </Link>
-        </li>
-        <li>
-        <Link to="/login" className="navbar-links">
-            S'identifier
-          </Link>
-        </li>
-        <li>
-          <a href="#about" className="navbar-links">
-            About
-          </a>
-        </li>
-        <li>
-          <a href="#reviews" className="navbar-links">
-            Reviews
-          </a>
-        </li>
-        <li>
-          <a href="#doctors" className="navbar-links">
-            Doctors
-          </a>
-        </li>
-        <li>
-          <a href="search" className="navbar-links">
-            Ou donner?
-          </a>
-        </li>
-      </ul>
-
-      {/* Mobile */}
-      <div className={`mobile-navbar ${nav ? "open-nav" : ""}`}>
-        <div onClick={openNav} className="mobile-navbar-close">
-          <FontAwesomeIcon icon={faXmark} className="hamb-icon" />
-        </div>
-
-        <ul className="mobile-navbar-links">
-          <li>
-            <Link onClick={openNav} to="/">
-              Home
-            </Link>
-          </li>
-          <li>
-            <a onClick={openNav} href="#services">
-              Services
-            </a>
-          </li>
-          <li>
-            <a onClick={openNav} href="#about">
-              About
-            </a>
-          </li>
-          <li>
-            <a onClick={openNav} href="#reviews">
-              Reviews
-            </a>
-          </li>
-          <li>
-            <a onClick={openNav} href="#doctors">
-              Doctors
-            </a>
-          </li>
-          <li>
-            <a onClick={openNav} href="#contact">
-              Contact
-            </a>
-          </li>
+        <ul className="nav-items">
+          {navItems.map((item) => {
+            if (item.title === "Services") {
+              return (
+                <li
+                  key={item.id}
+                  className={item.cName}
+                  onMouseEnter={() => setDropdown(true)}
+                  onMouseLeave={() => setDropdown(false)}
+                >
+                  <Link to={item.path}>{item.title}</Link>
+                  {dropdown && <Dropdown />}
+                </li>
+              );
+            }
+            return (
+              <li key={item.id} className={item.cName}>
+                <Link to={item.path}>{item.title}</Link>
+              </li>
+            );
+          })}
         </ul>
-      </div>
-
-      {/* Hamburger Icon */}
-      <div className="mobile-nav">
-        <FontAwesomeIcon
-          icon={faBars}
-          onClick={openNav}
-          className="hamb-icon"
-        />
-      </div>
-    </div>
+        <Button />
+      </nav>
+    </>
   );
 }
-
 export default Navbar;
