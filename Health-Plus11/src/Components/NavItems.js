@@ -29,7 +29,7 @@ export const navItems = [
     {
       id: 1,
       title: "Dashbord/admin",
-      path: "http://localhost:3000/dashbord",
+      path: "http://localhost:3001/admin/dashboard",
       cName: "submenu-item",
     },
     {

@@ -1,123 +1,4 @@
-// import React, { useState } from 'react';
-// import axios from 'axios';
-// import { Navigate } from 'react-router-dom'; 
 
-// const Signup = () => {
-//   const [redirect, setRedirect] = useState(false);
-//   const [formData, setFormData] = useState({
-//     username: '',
-//     dateNaissance: '',
-//     codePostal: '',
-//     email: '',
-//     password: '',
-//     confirmPassword: '',
-//     phoneNumber: '',
-//   });
-
-//   const handleChange = (e) => {
-//     setFormData({
-//       ...formData,
-//       [e.target.name]: e.target.value,
-//     });
-//   };
-
-//   const handleRegister = async (e) => {
-//     e.preventDefault();
-//     if (formData.password !== formData.confirmPassword) {
-//       alert('Les mots de passe ne correspondent pas');
-//       return;
-//     }
-
-//     const { confirmPassword, ...dataToSend } = formData;
-
-//     try {
-//       const response = await axios.post('http://localhost:9090/api/auth/signup', dataToSend);
-//       console.log('Inscription réussie:', response.data);
-//       localStorage.setItem("access_token", response.data.access_token);
-//       setRedirect(true); 
-//       // Vous pouvez rediriger l'utilisateur ou afficher un message de succès ici
-//     } catch (error) {
-//       if (error.response) {
-//         console.log('Erreur lors de l\'inscription:', error.response.data);
-//         console.log('Statut:', error.response.status);
-//       } else if (error.request) {
-//         console.log('Aucune réponse reçue:', error.request);
-//       } else {
-//         console.error('Erreur:', error.message);
-//       }
-//     }
-//   };
-//   if (redirect) {
-//     return <Navigate to='/' replace />;
-//   }
-
-//   return (
-//     <div className="signup-container">
-//       <h2>Inscription</h2>
-//       <form onSubmit={handleRegister}>
-//         <input
-//           type="text"
-//           name="username"
-//           value={formData.username}
-//           onChange={handleChange}
-//           placeholder="Nom d'utilisateur"
-//           required
-//         />
-//         <input
-//           type="date"
-//           name="dateNaissance"
-//           value={formData.dateNaissance}
-//           onChange={handleChange}
-//           placeholder="Date de naissance"
-//           required
-//         />
-//         <input
-//           type="text"
-//           name="codePostal"
-//           value={formData.codePostal}
-//           onChange={handleChange}
-//           placeholder="Code postal"
-//           required
-//         />
-//         <input
-//           type="email"
-//           name="email"
-//           value={formData.email}
-//           onChange={handleChange}
-//           placeholder="Email"
-//           required
-//         />
-//         <input
-//           type="password"
-//           name="password"
-//           value={formData.password}
-//           onChange={handleChange}
-//           placeholder="Mot de passe"
-//           required
-//         />
-//         <input
-//           type="password"
-//           name="confirmPassword"
-//           value={formData.confirmPassword}
-//           onChange={handleChange}
-//           placeholder="Confirmer le mot de passe"
-//           required
-//         />
-//         <input
-//           type="text"
-//           name="phoneNumber"
-//           value={formData.phoneNumber}
-//           onChange={handleChange}
-//           placeholder="Numéro de téléphone"
-//           required
-//         />
-//         <button type="submit">S'inscrire</button>
-//       </form>
-//     </div>
-//   );
-// };
-
-// export default Signup;
 import React, { useState } from 'react';
 import '../Styles/Signup.css';
 import Footer from '../Components/Footer';
@@ -195,7 +76,7 @@ export default function Signup() {
         body: JSON.stringify(userData),
       });
 
-      if (!response.ok) {
+      if (!response.ok) { 
         const errorData = await response.json();
         setApiError(errorData.message || "An error occurred during signup.");
       } else {
@@ -205,7 +86,7 @@ export default function Signup() {
       }
     } catch (error) {
       setApiError("An error occurred during signup. Please try again.");
-    }
+    }  
   };
 
   return (

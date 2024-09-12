@@ -1,6 +1,5 @@
-
-body {
-  font-family: "Georgia",serif;
+ body {
+  font-family: "Georgia", serif;
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -12,8 +11,8 @@ h1, p {
 }
 
 .search-section {
-  background-color: transparent;
-  color: #ffffff;
+  background-color: #f4f4f9;
+  color: #333;
   padding: 60px 90px;
   text-align: center;
 }
@@ -22,103 +21,125 @@ h1, p {
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 100px;
+  gap: 10px;
   margin-top: 30px;
-  padding: 50px;
-  margin: 60px;
   font-size: 20px;
+  position: relative;
 }
 
 .input {
   padding: 10px;
   border: 1px solid #d60a0a;
   border-radius: 5px;
-  margin-right: 10%;
+  width: 300px;
 }
 
 .button {
-  padding: 11px 40px;
+  padding: 11px 20px;
   background-color: #9f1515;
   color: #ffffff;
   border: none;
   border-radius: 5px;
   font-size: 18px;
   cursor: pointer;
-  transition: background-color 0.3s;
+  transition: background-color 0.3s ease;
 }
 
 .button:hover {
-  background-color: #710d0d95;
+  background-color: #710d0d;
+}
+
+.suggestions-list {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  background-color: white;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  max-height: 150px;
+  overflow-y: auto;
+  z-index: 10;
+}
+
+.suggestions-list li {
+  padding: 10px;
+  cursor: pointer;
+}
+
+.suggestions-list li:hover {
+  background-color: #f4f4f9;
 }
 
 .results-section {
-  padding: 100px;
+  padding: 60px 30px;
 }
 
 .cards-container {
-  display: grid;
-  grid-template-columns: 1fr;
+  display: flex;
+  flex-wrap: wrap;
   gap: 20px;
-  max-width: 700px;
-  margin: 0px auto;
-  margin-top: -170px;
+  justify-content: center;
 }
 
 .card {
-  background-color: #8f6f6f1b;
-  border: 2px solid #ddd;
-  border-radius: 10px;
-  padding: 30px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s, box-shadow 0.3s;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  transition: transform 0.3s ease;
+  width: 300px;
 }
 
 .card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+  transform: translateY(-10px);
 }
 
 .card-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 10px;
+  background-color: #9f1515;
+  padding: 10px;
+  color: white;
 }
 
 .card-title {
-  font-size: 20px;
-  font-weight: bold;
+  margin: 0;
 }
 
 .card-content {
-  font-size: 17px;
+  padding: 20px;
+  font-size: 16px;
+  color: #555;
 }
 
 .address, .phone, .hours {
-  margin: 10px 5px;
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
 }
 
 .icon {
   margin-right: 10px;
-  vertical-align: middle;
+  color: #9f1515;
 }
 
 .appointment-button {
-  background-color: #600c0c;
-  color: #ffffff;
+  background-color: #9f1515;
+  color: white;
+  padding: 10px;
   border: none;
   border-radius: 5px;
-  padding: 12px;
   cursor: pointer;
-  transition: background-color 0.3s;
+  transition: background-color 0.3s ease;
+  text-align: center;
 }
 
 .appointment-button:hover {
-  background-color: #8b212144;
+  background-color: #710d0d;
 }
 
 .text-muted-foreground {
+  color: #999;
   text-align: center;
-  color: #888888;
   margin-top: 20px;
-}
+} 
+
